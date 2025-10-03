@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+        <title>Cadastro de Fornecedores - Sistema de Estoque de Farmácia</title>
+        <link rel="stylesheet" href="css/cadastro.css" />
+    </head>
+    <body>
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <header>
+            <img src="img/logomain4.png" alt="MainLogo" class="MainLogo" />
+            <nav>
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Início</a>
+                    <a href="index.html">Cadastros</a>
+                    <a href="movimento.html">Movimento</a>
+                    <a href="relatorio.html">Relatório</a>
+                    <a href="vendas.html">Vendas</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="main-content">
+                    <a href="index.html" class="back-btn">← Voltar</a>
+                    <h1 class="page-title">Cadastro de Fornecedores</h1>
+
+                    <div class="form-container">
+                        <form
+                            id="fornecedor-form"
+                            onsubmit="cadastrarFornecedor(event)"
+                        >
+                            <div class="form-group">
+                                <label for="fornecedor-nome"
+                                    >Nome da Empresa</label
+                                >
+                                <input
+                                    type="text"
+                                    id="fornecedor-nome"
+                                    name="fornecedor-nome"
+                                    placeholder="Digite o nome da empresa"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-cnpj">CNPJ</label>
+                                <input
+                                    type="text"
+                                    id="fornecedor-cnpj"
+                                    name="fornecedor-cnpj"
+                                    placeholder="00.000.000/0000-00"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-telefone"
+                                    >Telefone</label
+                                >
+                                <input
+                                    type="text"
+                                    id="fornecedor-telefone"
+                                    name="fornecedor-telefone"
+                                    placeholder="(00) 0000-0000"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="fornecedor-email">E-mail</label>
+                                <input
+                                    type="email"
+                                    id="fornecedor-email"
+                                    name="fornecedor-email"
+                                    placeholder="empresa@email.com"
+                                />
+                            </div>
+
+                            <fieldset class="endereco-section">
+                                <legend>Endereço da Empresa</legend>
+
+                                <div class="form-row">
+                                    <div class="form-group form-group-small">
+                                        <label for="fornecedor-cep">CEP</label>
+                                        <input
+                                            type="text"
+                                            id="fornecedor-cep"
+                                            name="fornecedor-cep"
+                                            placeholder="00000-000"
+                                        />
+                                    </div>
+                                    <div class="form-group form-group-large">
+                                        <label for="fornecedor-logradouro"
+                                            >Logradouro</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-logradouro"
+                                            name="fornecedor-logradouro"
+                                            placeholder="Rua, Avenida, etc."
+                                        />
+                                    </div>
+                                    <div class="form-group form-group-small">
+                                        <label for="fornecedor-numero"
+                                            >Número</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-numero"
+                                            name="fornecedor-numero"
+                                            placeholder="123"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fornecedor-complemento"
+                                            >Complemento</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-complemento"
+                                            name="fornecedor-complemento"
+                                            placeholder="Sala, Andar, etc. (opcional)"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fornecedor-bairro"
+                                            >Bairro</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-bairro"
+                                            name="fornecedor-bairro"
+                                            placeholder="Nome do bairro"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fornecedor-cidade"
+                                            >Cidade</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-cidade"
+                                            name="fornecedor-cidade"
+                                            placeholder="Nome da cidade"
+                                        />
+                                    </div>
+                                    <div class="form-group form-group-small">
+                                        <label for="fornecedor-estado"
+                                            >Estado</label
+                                        >
+                                        <select
+                                            id="fornecedor-estado"
+                                            name="fornecedor-estado"
+                                        >
+                                            <option value="">Selecione</option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AP">AP</option>
+                                            <option value="AM">AM</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MT">MT</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MG">MG</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PR">PR</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RS">RS</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SP">SP</option>
+                                            <option value="SE">SE</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="contato-section">
+                                <legend>Dados do Contato</legend>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fornecedor-contato-nome"
+                                            >Nome do Contato</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-contato-nome"
+                                            name="fornecedor-contato-nome"
+                                            placeholder="Nome do representante"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fornecedor-contato-cargo"
+                                            >Cargo</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-contato-cargo"
+                                            name="fornecedor-contato-cargo"
+                                            placeholder="Gerente, Vendedor, etc."
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fornecedor-contato-telefone"
+                                            >Telefone do Contato</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="fornecedor-contato-telefone"
+                                            name="fornecedor-contato-telefone"
+                                            placeholder="(00) 00000-0000"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fornecedor-contato-email"
+                                            >E-mail do Contato</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="fornecedor-contato-email"
+                                            name="fornecedor-contato-email"
+                                            placeholder="contato@email.com"
+                                        />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary">
+                                    Salvar
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    onclick="limpaFornecedor()"
+                                >
+                                    Limpar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-container">
+                        <div>
+                            <input
+                                type="text"
+                                id="buscar-fornecedor"
+                                name="buscar-fornecedor"
+                                class="search-input"
+                                placeholder="Buscar fornecedor por CNPJ..."
+                            />
+                            <button
+                                type="button"
+                                onclick="listarFornecedores()"
+                                class="search-btn"
+                            >
+                                Buscar
+                            </button>
+                            <button
+                                type="button"
+                                onclick="listarFornecedores()"
+                                class="search-btn"
+                            >
+                                Listar Todos
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>CNPJ</th>
+                                    <th>Telefone</th>
+                                    <th>Email</th>
+                                    <th>Cidade/UF</th>
+                                    <th>Contato</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-fornecedores"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer_cad">
+            <p>&copy; 2025 - Sistema de Estoque de Farmácia</p>
+            <address>
+                Contato:
+                <a href="mailto:suporte@estoquefarma.com.br"
+                    >suporte@estoquefarmasic.com.br</a
+                >
+            </address>
+        </footer>
+
+        <script src="js/fornecedor.js"></script>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                listarFornecedores();
+            });
+        </script>
+    </body>
+</html>

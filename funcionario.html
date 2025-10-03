@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Cadastro de Funcionários - Sistema de Estoque de Farmácia</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body onload="listarFuncionarios()">
+    <header>
+        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <nav>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Início</a>
+                <a href="index.html">Cadastros</a>
+                <a href="movimento.html">Movimento</a>
+                <a href="relatorio.html">Relatório</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="main-content">
+                <a href="index.html" class="back-btn">← Voltar</a>
+                <h1 class="page-title">Cadastro de Funcionários</h1>
+
+                <div class="form-container">
+                    <form class="form-funcionario">
+                        <div class="form-group">
+                            <label for="funcionario-nome">Nome Completo</label>
+                            <input type="text" id="funcionario-nome" name="funcionario-nome" placeholder="Digite o nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="funcionario-cpf">CPF</label>
+                            <input type="text" id="funcionario-cpf" name="funcionario-cpf" placeholder="000.000.000-00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="funcionario-email">E-mail</label>
+                            <input type="email" id="funcionario-email" name="funcionario-email" placeholder="exemplo@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="funcionario-telefone">Telefone</label>
+                            <input type="text" id="funcionario-telefone" name="funcionario-telefone" placeholder="(00) 00000-0000">
+                        </div>
+                        <!-- Seção de Endereço -->
+                        <fieldset class="endereco-section">
+                            <legend>Endereço</legend>
+
+                            <div class="form-row">
+                                <div class="form-group form-group-small">
+                                    <label for="funcionario-cep">CEP</label>
+                                    <input type="text" id="funcionario-cep" name="funcionario-cep" placeholder="00000-000">
+                                </div>
+                                <div class="form-group form-group-large">
+                                    <label for="funcionario-logradouro">Logradouro</label>
+                                    <input type="text" id="funcionario-logradouro" name="funcionario-logradouro" placeholder="Rua, Avenida, etc.">
+                                </div>
+                                <div class="form-group form-group-small">
+                                    <label for="funcionario-numero">Número</label>
+                                    <input type="text" id="funcionario-numero" name="funcionario-numero" placeholder="123">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="funcionario-complemento">Complemento</label>
+                                    <input type="text" id="funcionario-complemento" name="funcionario-complemento" placeholder="Apto, Bloco, etc. (opcional)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="funcionario-bairro">Bairro</label>
+                                    <input type="text" id="funcionario-bairro" name="funcionario-bairro" placeholder="Nome do bairro">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="funcionario-cidade">Cidade</label>
+                                    <input type="text" id="funcionario-cidade" name="funcionario-cidade" placeholder="Nome da cidade">
+                                </div>
+                                <div class="form-group form-group-small">
+                                    <label for="funcionario-estado">Estado</label>
+                                    <select id="funcionario-estado" name="funcionario-estado">
+                                        <option value="">Selecione</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="funcionario-cargo">Cargo</label>
+                            <select id="funcionario-cargo" name="funcionario-cargo" required>
+                                <option value="">Selecione um cargo</option>
+                                <option value="farmaceutico">Farmacêutico</option>
+                                <option value="auxiliar">Auxiliar de Farmácia</option>
+                                <option value="atendente">Atendente</option>
+                                <option value="gerente">Gerente</option>
+                                <option value="estoquista">Estoquista</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="funcionario-salario">Salário</label>
+                            <input type="number" id="funcionario-salario" name="funcionario-salario" placeholder="0.00" step="0.01" min="0">
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" onclick="cadastrarFuncionario(event)" class="btn btn-primary">Salvar</button>
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="search-container">
+                    <form action="#" method="get">
+                        <input type="text" id="buscar-funcionario" name="buscar-funcionario" class="search-input" placeholder="Buscar funcionário...">
+                        <button type="button" onclick="listarFuncionarios()" class="search-btn">Buscar</button>
+                    </form>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Email</th>
+                                <th>Cargo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabela-funcionarios">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer_cad">
+        <p>&copy; 2025 - Sistema de Estoque de Farmácia</p>
+        <address>
+            Contato: <a href="mailto:suporte@estoquefarma.com.br">suporte@estoquefarmasic.com.br</a>
+        </address>
+    </footer> 
+
+    <script src="js/funcionario.js"></script>
+</body>
+</html>

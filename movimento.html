@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/movimento.css">
+    <title>Movimento de Estoque - Sistema de Farmácia</title>
+</head>
+<body>
+    <header>
+        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <nav>
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="index.html">Cadastros</a>
+                <a href="movimento.html">Movimento</a>
+                <a href="relatorio.html">Relatório</a>
+                <a href="vendas.html">Vendas</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h3>Registrar Movimento de Estoque</h3>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Dados Gerais</legend>
+                    <a href="index.html" class="back-btn">← Voltar</a>
+
+                    <div>
+                        <label for="tipo_movimento">Tipo de Movimento:</label>
+                        <select id="tipo_movimento" name="tipo_movimento" required>
+                            <option value="">Selecione</option>
+                            <option value="entrada">Entrada</option>
+                            <option value="saida">Saída</option>
+                            <option value="ajuste">Ajuste de Inventário</option>
+                            <option value="devolucao">Devolução</option>
+                            <option value="perda">Perda/Vencimento</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="data_movimento">Data do Movimento:</label>
+                        <input type="datetime-local" id="data_movimento" name="data_movimento" required>
+                    </div>
+
+                    <div>
+                        <label for="responsavel">Responsável:</label>
+                        <select id="responsavel" name="responsavel" required>
+                            <option value="">Selecione um funcionário</option>
+                            <option value="1">João Silva - Farmacêutico</option>
+                            <option value="2">Maria Oliveira - Farmacêutica</option>
+                            <option value="3">Pedro Santos - Estoquista</option>
+                            <option value="4">Ana Souza - Gerente</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- CAMPOS EXCLUSIVOS PARA ENTRADA -->
+                <fieldset id="entrada_campos" class="tipo-campos" style="display:none;">
+                    <legend>Dados de Entrada</legend>
+                    <div>
+                        <label for="nota_fiscal">Número da Nota Fiscal:</label>
+                        <input type="text" id="nota_fiscal" name="nota_fiscal">
+                    </div>
+                    <div>
+                        <label for="fornecedor">Fornecedor:</label>
+                        <select id="fornecedor" name="fornecedor">
+                            <option value="">Selecione um fornecedor</option>
+                            <option value="1">Distribuidora MedPharma</option>
+                            <option value="2">Farmacêutica BioSaúde</option>
+                            <option value="3">Laboratórios Unidos</option>
+                            <option value="4">Importadora Global Farma</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- CAMPOS EXCLUSIVOS PARA SAÍDA -->
+                <fieldset id="saida_campos" class="tipo-campos" style="display:none;">
+                    <legend>Dados de Saída</legend>
+                    <div>
+                        <label for="motivo_saida">Motivo da Saída:</label>
+                        <select id="motivo_saida" name="motivo_saida">
+                            <option value="">Selecione o motivo</option>
+                            <option value="venda">Venda</option>
+                            <option value="transferencia">Transferência</option>
+                            <option value="descarte">Descarte</option>
+                            <option value="amostra">Amostra Grátis</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- CAMPOS EXCLUSIVOS PARA AJUSTE -->
+
+                    <fieldset id="ajuste_campos" class="tipo-campos" style="display:none;">
+                        <legend>Ajuste de Inventário</legend>
+
+                        <div>
+                            <label for="medicamento_ajuste">Medicamento:</label>
+                            <select id="medicamento_ajuste" name="medicamento_ajuste" required>
+                                <option value="">Selecione um medicamento</option>
+                                <option value="1">Paracetamol 500mg</option>
+                                <option value="2">Dipirona 1g</option>
+                                <option value="3">Amoxicilina 500mg</option>
+                                <option value="4">Omeprazol 20mg</option>
+                                <option value="5">Ibuprofeno 600mg</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="quantidade_ajuste">Quantidade:</label>
+                            <input type="number" id="quantidade_ajuste" name="quantidade_ajuste" placeholder="Ex: -10 ou +20" required>
+                        </div>
+
+                        <div>
+                            <label for="justificativa_ajuste">Justificativa:</label>
+                            <input type="text" id="justificativa_ajuste" name="justificativa_ajuste" required>
+                        </div>
+                    </fieldset>
+
+
+                <!-- CAMPOS EXCLUSIVOS PARA DEVOLUÇÃO -->
+                <fieldset id="devolucao_campos" class="tipo-campos" style="display:none;">
+                    <legend>Devolução</legend>
+                    <div>
+                        <label for="cliente_devolucao">Cliente/Fornecedor:</label>
+                        <input type="text" id="cliente_devolucao" name="cliente_devolucao">
+                    </div>
+                    <div>
+                        <label for="motivo_devolucao">Motivo da Devolução:</label>
+                        <input type="text" id="motivo_devolucao" name="motivo_devolucao">
+                    </div>
+                </fieldset>
+
+                <!-- CAMPOS EXCLUSIVOS PARA PERDA -->
+                <fieldset id="perda_campos" class="tipo-campos" style="display:none;">
+                    <legend>Perda / Vencimento</legend>
+                    <div>
+                        <label for="motivo_perda">Motivo:</label>
+                        <input type="text" id="motivo_perda" name="motivo_perda">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Observações</legend>
+                    <textarea id="observacao" name="observacao" rows="3" cols="50"></textarea>
+                </fieldset>
+
+                <!-- ITENS DO MOVIMENTO (igual ao seu código, mantido) -->
+                <fieldset>
+                    <legend>Itens do Movimento</legend>
+                    <!-- sua tabela de itens aqui -->
+                </fieldset>
+
+                <div>
+                    <button type="submit">Registrar Movimento</button>
+                    <button type="reset">Limpar Formulário</button>
+                    <button type="button">Cancelar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer_cad">
+        <p>&copy; 2025 - Sistema de Estoque de Farmácia</p>
+        <address>
+            Contato: <a href="mailto:suporte@estoquefarma.com.br">suporte@farmasic.com.br</a>
+        </address>
+    </footer>
+
+    <script src="js/movimento.js"></script>
+</body>
+</html>

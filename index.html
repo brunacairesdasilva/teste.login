@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sistema de Estoque de Farmácia</title>
+</head>
+<body>
+    <header>
+        <img src="img/logomain4.png" alt="MainLogo" class="MainLogo">
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="#cadastros">Cadastros</a>
+                <a href="movimento.html">Movimento</a>
+                <a href="relatorio.html">Relatório</a>
+                <a href="vendas.html">Vendas</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="overlay" onclick="closeMenu()"></div>
+    <div class="mobile-menu">
+        <a href="index.html" onclick="closeMenu()">Início</a>
+        <a href="#cadastros" onclick="closeMenu()">Cadastros</a>
+        <a href="movimento.html" onclick="closeMenu()">Movimento</a>
+        <a href="relatorio.html" onclick="closeMenu()">Relatório</a>
+        <a href="Vendas.html" onclick="closeMenu()">Vendas</a>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <h1 class="page-title">BEM-VINDO AO SISTEMA ESTOQUE FARMASIC</h1>
+            <div id="cadastros" class="card-container">
+                <a href="cliente.html" class="card">
+                    <div class="card-icon"><img src="img/cliente.png" alt=""></div>
+                    <h2 class="card-title">Cadastro de Clientes</h2>
+                    <p class="card-description">Gerencie informações de clientes da farmácia.</p>
+                </a>
+
+                <a href="fornecedor.html" class="card">
+                    <div class="card-icon"><img src="img/forn.png" alt=""></div>
+                    <h2 class="card-title">Cadastro de Fornecedores</h2>
+                    <p class="card-description">Gerencie informações dos fornecedores de produtos.</p>
+                </a>
+                <a href="produto.html" class="card">
+                    <div class="card-icon"><img src="img/medicine.png" alt=""></div>
+                    <h2 class="card-title">Cadastro de Produtos</h2>
+                    <p class="card-description">Administre o catálogo de medicamentos e produtos.</p>
+                </a>
+                <a href="funcionario.html" class="card">
+                    <div class="card-icon"><img src="img/func.png" alt=""></div>
+                    <h2 class="card-title">Cadastro de Funcionários</h2>
+                    <p class="card-description">Administre a equipe da farmácia.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="img">
+                <img src="img/logoccm.png" class="ccm" alt="CCM Logo">
+            </div>
+            <div class="footer-section">
+                <h3>Farmasic Pro</h3>
+                <div class="version-info">
+                    <span>Versão 2.5.3</span>
+                    <span class="version-pill">ESTÁVEL</span>
+                </div>
+                <p>Sistema de gerenciamento de estoque farmacêutico desenvolvido para otimizar processos, controlar validades e manter conformidade regulatória.</p>
+                <div class="system-status">
+                    <div class="status-indicator"></div>
+                    <span>Todos os sistemas operacionais</span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <a href="#">Centro de Treinamento</a>
+                <a href="#">Blog Técnico</a>
+                <a href="#">Atualizações Regulatórias</a>
+                <a href="#">Webinars Gratuitos</a>
+                <a href="#">API e Integrações</a>
+                <a href="#">Comunidade de Usuários</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <div class="img">
+                <img src="img/logoestado.png" class="estado" alt="Estado Logo">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Farmasic Pro - Sistema de Gestão de Estoque Farmacêutico. Todos os direitos reservados.</p>
+            <p>Uma solução desenvolvida pela Farmasic Solutions LTDA. CNPJ: 12.345.678/0001-99</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/relatorio.css">
+    <title>Relatórios - Sistema de Farmácia</title>
+    <style>
+        .tabela-relatorio { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logomain4.png" alt="Logo" class="MainLogo">
+        <nav>
+            <div class="logo"></div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="index.html">Cadastros</a>
+                <a href="movimento.html">Movimento</a>
+                <a href="relatorio.html">Relatório</a>
+                <a href="vendas.html">Vendas</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Relatórios</h2>
+
+        <!-- CAMPO DE SELEÇÃO -->
+        <label for="tipo_relatorio"><strong>Selecione o relatório:</strong></label>
+        <select id="tipo_relatorio" onchange="mostrarTabela()">
+            <option value="">-- Escolha --</option>
+            <option value="clientes">Clientes com Histórico de Vendas</option>
+            <option value="produtos">Produtos e Fornecedores</option>
+            <option value="estoque">Estoque Atual</option>
+            <option value="alertas">Alertas de Estoque</option>
+            <option value="completo">Relatório Completo (Clientes + Endereços + Telefones)</option>
+        </select>
+
+        <!-- CLIENTES COM HISTÓRICO -->
+        <section id="clientes" class="tabela-relatorio">
+            <h3>Clientes com Histórico de Vendas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Histórico de Vendas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>3 compras (R$ 200,00)</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>5 compras (R$ 750,00)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PRODUTOS E FORNECEDORES -->
+        <section id="produtos" class="tabela-relatorio">
+            <h3>Produtos com Fornecedores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Fornecedor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracetamol 500mg</td>
+                        <td>EMS</td>
+                    </tr>
+                    <tr>
+                        <td>Amoxicilina 500mg</td>
+                        <td>Medley</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ESTOQUE ATUAL -->
+        <section id="estoque" class="tabela-relatorio">
+            <h3>Estoque Atual</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade em Estoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dipirona 500mg</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Ibuprofeno 600mg</td>
+                        <td>80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ALERTAS DE ESTOQUE -->
+        <section id="alertas" class="tabela-relatorio">
+            <h3>Alertas de Estoque</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dipirona 500mg</td>
+                        <td>Estoque Baixo</td>
+                    </tr>
+                    <tr>
+                        <td>Omeprazol 20mg</td>
+                        <td>Vencido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- RELATÓRIO COMPLETO DE CLIENTES -->
+        <section id="completo" class="tabela-relatorio">
+            <h3>Relatório Completo - Clientes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Endereço</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Rua A, nº 123 - Centro</td>
+                        <td>(11) 99999-1111</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>Av. Brasil, nº 456 - Bairro B</td>
+                        <td>(11) 98888-2222</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Sistema de Estoque de Farmácia</p>
+    </footer>
+
+    <script src="js/relatorio.js"></script>
+</body>
+</html>vendas.html
